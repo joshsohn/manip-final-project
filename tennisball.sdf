@@ -1,0 +1,45 @@
+<?xml version='1.0'?>
+<sdf xmlns:drake="http://drake.mit.edu" version="1.8">
+  <model name='tennisball'>
+    <link name='tennisball'>
+      <inertial>
+        <pose>-8.066081686330628e-08 -3.78366866437776e-09 -1.189936958069206e-08 0 0 0</pose>
+        <mass>0.2460254254597445</mass>
+        <inertia>
+          <ixx>0.0001490477650512398</ixx>
+          <ixy>-8.403667269698543e-13</ixy>
+          <ixz>2.5837841248539843e-11</ixz>
+          <iyy>0.00014854354350513026</iyy>
+          <iyz>5.021182735841251e-12</iyz>
+          <izz>0.00014854519846146548</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>tennisball.obj</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>tennisball.obj</uri>
+            <scale>1.0 1.0 1.0</scale>
+          </mesh>
+        </geometry>
+        <!-- The proximity properties immediately below enable the hydroelastic
+             contact model for this body. To use point contact instead, delete
+             or comment out the <drake:rigid_hydroelastic> element. -->
+        <drake:proximity_properties>
+          <drake:mu_dynamic>1e6</drake:mu_dynamic>
+          <drake:mu_static>1e6</drake:mu_static>
+          <drake:rigid_hydroelastic/>
+        </drake:proximity_properties>
+      </collision>
+    </link>
+  </model>
+</sdf>
