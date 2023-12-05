@@ -20,7 +20,7 @@ directives:
     parent: iiwa::iiwa_link_7
     child: wsg::body
     X_PC:
-        translation: [0, 0, 0.082]
+        translation: [0, 0, 0.082] # 0.114
         rotation: !Rpy { deg: [90, 0, 90]}
 - add_model:
     name: bottle
