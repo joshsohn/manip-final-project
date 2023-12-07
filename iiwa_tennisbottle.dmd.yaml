@@ -1,4 +1,4 @@
-directives:
+directives: 
 - add_model:
     name: iiwa
     file: package://drake/manipulation/models/iiwa_description/iiwa7/iiwa7_no_collision.sdf
@@ -25,3 +25,4 @@ directives:
 - add_model:
     name: bottle
     file: file:///workspaces/manip-final-project/model.sdf
+    

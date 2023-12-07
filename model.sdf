@@ -190,5 +190,48 @@
       <child>table</child>
       <pose>1 0 0 0 0 0</pose>
     </joint>
+
+    <link name="table2">
+      <inertial>
+        <mass>18.70</mass>
+        <inertia>
+          <ixx>0.79</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.53</iyy>
+          <iyz>0</iyz>
+          <izz>1.2</izz>
+        </inertia>
+      </inertial>
+    <visual name="bottom">
+        <pose>2 0.0 1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.49 0.63 0.015</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0.9 0.9 0.9 1.0</diffuse>
+        </material>
+      </visual>
+      <collision name="bottom">
+        <pose>2 0.0 1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.49 0.63 0.015</size>
+          </box>
+        </geometry>
+        <drake:proximity_properties>
+          <drake:compliant_hydroelastic/>
+          <drake:hydroelastic_modulus>1.0e6</drake:hydroelastic_modulus>
+        </drake:proximity_properties>
+      </collision>
+    </link>
+    
+    <joint name="ground_weld2" type="fixed">
+      <parent>world</parent>
+      <child>table2</child>
+      <pose>2 0 1 0 0 0</pose>
+    </joint>
   </model>
 </sdf>
